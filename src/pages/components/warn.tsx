@@ -4,7 +4,10 @@ import { Radio } from 'antd';
 
 interface IProps  {
   warn: Boolean;
-  onTemperatureChange: Function
+  onTemperatureChange: Function;
+  three: Object;
+  four: Object;
+  children: any[] | any
 }
 class WarningBanner extends Component<IProps> {
   constructor(props: any) {
@@ -16,7 +19,6 @@ class WarningBanner extends Component<IProps> {
     console.log('this.props', this.props)
   }
   onChange(e: any) {
-    console.log('this :>> ', this);
     this.props.onTemperatureChange(e.target.value)
   }
   componentWillReceiveProps(nextProps: any, nextContext: any) {
@@ -29,6 +31,10 @@ class WarningBanner extends Component<IProps> {
     }
     return (
       <div className="warning">
+        <div>{this.props.children[0]}</div>
+        <div>{this.props.children[1]}</div>
+        <div>{this.props.three}</div>
+        <div>{this.props.four}</div>
         Warningasdf!
         <Radio.Group onChange={e => this.onChange(e)} value={this.props.warn ? 1 : 0}>
           <Radio value={0}>AAA</Radio>

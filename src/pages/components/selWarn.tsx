@@ -12,6 +12,10 @@ class SelWarn extends Component<IProps> {
     // this.onChange = this.onChange.bind(this)
   }
 
+  componentDidMount() {
+    console.log('this.prop11s', this.props)
+  }
+
   onChange(e: any) {
     console.log('e :>> ', e);
     this.props.onTemperatureChange(e.target.value)
@@ -26,6 +30,7 @@ class SelWarn extends Component<IProps> {
     const temperature = this.props.warn;
     return (
       <fieldset>
+        <div>{this.props.children}</div>
         <legend>Enter temperature in Celsius:</legend>
         <Radio.Group onChange={e => this.onChange(e)} value={temperature ? 1 : 0}>
           <Radio value={0}>A</Radio>

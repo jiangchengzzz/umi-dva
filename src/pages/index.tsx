@@ -76,8 +76,17 @@ class Home extends React.Component {
   handleClickMenu = () => {
     return (
       <div>
-        <WarningBanner warn={this.state.warn} onTemperatureChange={this.onTemperatureChange}></WarningBanner>
-        <SelWarn warn={this.state.warn} onTemperatureChange={this.onTemperatureChange}></SelWarn>
+        <WarningBanner warn={this.state.warn} three={<h4>我就是父组件传过来的three</h4>} four={<h4>我就是父组件传过来的four</h4>} onTemperatureChange={this.onTemperatureChange}>
+          {
+            <h4>我就是父组件传过来的one</h4>
+          }
+          {
+            <h4>我就是父组件传过来的two</h4>
+          }
+        </WarningBanner>
+        <SelWarn warn={this.state.warn} onTemperatureChange={this.onTemperatureChange}>
+          <h4>我就是父组件传过来的啊啊啊</h4>
+        </SelWarn>
         <h1>Hello</h1>
         <textarea value={this.state.text} onChange={this.textChange}></textarea>
         <select value={this.state.value} onChange={this.selChange}>
