@@ -1,0 +1,43 @@
+.header-box {
+  display: flex;
+  justify-items: flex-start;
+  align-items: center;
+}
+.site-layout {
+  background: #fff;
+  padding: 24px;
+  min-height: calc(100vh - 136px);
+  .site-layout-background {
+    background-color: pink;
+  }
+}
+.logo {
+  width: 120px;
+  height: 31px;
+  background-image: url('../../assets/img/logo-0000000.png');
+  background-size: 100% 100%;
+  margin: 16px 24px 16px 0;
+  float: left;
+}
+.top-menu {
+  flex: 1
+}
+.person-box {
+  height: 100%;
+  width: 150px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #ffffff;
+  font-size: 25px;
+  .name {
+    font-size: 18px;
+    margin-right: 20px;
+  }
+}
+[data-theme="dark"] .site-layout-content {
+  background: #141414;
+}
+[data-theme="dark"] .logo {
+  background: rgba(255,255,255,0.3);
+}
